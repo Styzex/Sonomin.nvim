@@ -14,7 +14,7 @@ Sonomin is a dark colorscheme for Neovim, its a mix between [Sonokai](https://gi
 
 ```lua
 use {
-    'Styzex/Sonomin',
+    'Styzex/Sonomin.nvim',
     config = function()
         require('sonomin').setup()
     end
@@ -26,7 +26,7 @@ use {
 ```lua
 require('lazy').setup({
     {
-        'Styzex/Sonomin',
+        'Styzex/Sonomin.nvim',
         lazy = false,
         priority = 1000
     }
@@ -36,7 +36,7 @@ require('lazy').setup({
 ### 📦 [vim-plug](https://github.com/junegunn/vim-plug):
 
 ```vim
-Plug 'Styzex/Sonomin'
+Plug 'Styzex/Sonomin.nvim'
 ```
 
 Thank you for using Sonomin!
