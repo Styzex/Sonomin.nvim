@@ -4,16 +4,18 @@ M.version = "0.1.1"
 
 -- Define colors
 local colors = {
-    bg = "#1E1E1E",
-    fg = "#D4D4D4",
-    gray = "#808080",
-    blue = "#569CD6",
-    cyan = "#4EC9B0",
-    green = "#6A9955",
-    orange = "#CE9178",
-    purple = "#C586C0",
-    red = "#F44747",
-    yellow = "#DCDCAA",
+    bg = "#282c34",
+    fg = "#abb2bf",
+    gray = "#5c6370",
+    blue = "#61afef",
+    cyan = "#56b6c2",
+    green = "#98c379",
+    orange = "#d19a66",
+    purple = "#c678dd",
+    red = "#e06c75",
+    yellow = "#e5c07b",
+    light_gray = "#848b98",
+    dark_gray = "#3e4452",
 }
 
 function M.setup()
