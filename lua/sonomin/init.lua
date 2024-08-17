@@ -4,22 +4,24 @@ M.version = "0.1.1"
 
 -- Define colors
 local colors = {
-    -- Min theme background colors
+    -- Background colors
     bg = "#1f1f1f",
     bg_dark = "#181818",
     bg_highlight = "#282828",
     
-    -- Sonokai-inspired text colors
+    -- Foreground colors
     fg = "#e2e2e3",
-    gray = "#848089",
-    light_gray = "#a6a6a7",
-    blue = "#76cce0",
-    green = "#9ed072",
-    purple = "#b39df3",
+    fg_dark = "#7f8490",
+    fg_gutter = "#3b3d4b",
+    
+    -- Base colors
     red = "#fc5d7c",
     orange = "#f39660",
     yellow = "#e7c664",
-    cyan = "#7dcfff",
+    green = "#9ed072",
+    blue = "#76cce0",
+    purple = "#b39df3",
+    cyan = "#f39660",
 }
 
 function M.setup()
@@ -35,7 +37,7 @@ function M.setup()
         -- Highlight groups
         Normal = { fg = colors.fg, bg = colors.bg },
         NormalFloat = { fg = colors.fg, bg = colors.bg_dark },
-        Comment = { fg = colors.gray },
+        Comment = { fg = colors.fg_dark },
         Constant = { fg = colors.orange },
         String = { fg = colors.green },
         Identifier = { fg = colors.blue },
@@ -49,12 +51,12 @@ function M.setup()
         Error = { fg = colors.red },
 
         -- UI elements
-        LineNr = { fg = colors.gray },
+        LineNr = { fg = colors.fg_gutter },
         CursorLine = { bg = colors.bg_highlight },
-        CursorLineNr = { fg = colors.yellow, bold = true },
+        CursorLineNr = { fg = colors.fg, bold = true },
         VertSplit = { fg = colors.bg_highlight },
         StatusLine = { fg = colors.fg, bg = colors.bg_highlight },
-        StatusLineNC = { fg = colors.light_gray, bg = colors.bg_dark },
+        StatusLineNC = { fg = colors.fg_dark, bg = colors.bg_dark },
         Pmenu = { fg = colors.fg, bg = colors.bg_dark },
         PmenuSel = { fg = colors.bg, bg = colors.blue },
         Search = { fg = colors.bg, bg = colors.yellow },
