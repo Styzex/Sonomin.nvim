@@ -1,7 +1,4 @@
 local M = {}
-
-M.version = "0.1.0"
-
 -- Define colors
 local colors = {
     bg = "#1E1E1E",
@@ -17,7 +14,7 @@ local colors = {
 }
 
 function M.setup()
-    print("Setting up Sonomin colorscheme...")
+    print("Setting up Sonomin colorscheme v" .. M.version)
     vim.cmd("hi clear")
     if vim.fn.exists("syntax_on") then
         vim.cmd("syntax reset")
