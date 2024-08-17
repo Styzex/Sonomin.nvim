@@ -1,4 +1,7 @@
 local M = {}
+
+M.version = "0.1.1"
+
 -- Define colors
 local colors = {
     bg = "#1E1E1E",
@@ -14,7 +17,6 @@ local colors = {
 }
 
 function M.setup()
-    print("Setting up Sonomin colorscheme v" .. M.version)
     vim.cmd("hi clear")
     if vim.fn.exists("syntax_on") then
         vim.cmd("syntax reset")
@@ -53,7 +55,6 @@ function M.setup()
     for group, styles in pairs(groups) do
         vim.api.nvim_set_hl(0, group, styles)
     end
-    print("Sonomin setup complete")
 end
 
 return M

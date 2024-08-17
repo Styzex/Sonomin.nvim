@@ -7,22 +7,14 @@ end
 vim.o.termguicolors = true
 vim.g.colors_name = "sonomin"
 
-local ok, _ = pcall(require, "sonomin")
+local ok, sonomin = pcall(require, "sonomin")
 if not ok then
-    print("Failed to load Sonomin module")
+    print("Failed to load Sonomin module: " .. tostring(sonomin))
     return
 end
 
-local M = {}
+print("Sonomin module loaded successfully")
 
-M.version = "0.1.0"
+sonomin.setup()
 
-function M.setup()
-    print("Setting up Sonomin colorscheme v" .. M.version)
-    -- ... rest of your setup function ...
-    print("Sonomin setup complete")
-end
-
-require("sonomin").setup()
-
-print("Sonomin colorscheme v" .. M.version .. " loaded successfully")
+print("Sonomin colorscheme v" .. sonomin.version .. " applied successfully")
