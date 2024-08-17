@@ -4,18 +4,22 @@ M.version = "0.1.1"
 
 -- Define colors
 local colors = {
-    bg = "#282c34",
-    fg = "#abb2bf",
-    gray = "#5c6370",
-    blue = "#61afef",
-    cyan = "#56b6c2",
-    green = "#98c379",
-    orange = "#d19a66",
-    purple = "#c678dd",
-    red = "#e06c75",
-    yellow = "#e5c07b",
-    light_gray = "#848b98",
-    dark_gray = "#3e4452",
+    -- Min theme background colors
+    bg = "#1f1f1f",
+    bg_dark = "#181818",
+    bg_highlight = "#282828",
+    
+    -- Sonokai-inspired text colors
+    fg = "#e2e2e3",
+    gray = "#848089",
+    light_gray = "#a6a6a7",
+    blue = "#76cce0",
+    green = "#9ed072",
+    purple = "#b39df3",
+    red = "#fc5d7c",
+    orange = "#f39660",
+    yellow = "#e7c664",
+    cyan = "#7dcfff",
 }
 
 function M.setup()
@@ -30,26 +34,47 @@ function M.setup()
     local groups = {
         -- Highlight groups
         Normal = { fg = colors.fg, bg = colors.bg },
-        Comment = { fg = colors.green },
+        NormalFloat = { fg = colors.fg, bg = colors.bg_dark },
+        Comment = { fg = colors.gray },
         Constant = { fg = colors.orange },
-        String = { fg = colors.orange },
-        Identifier = { fg = colors.cyan },
-        Function = { fg = colors.yellow },
-        Statement = { fg = colors.blue },
-        PreProc = { fg = colors.purple },
-        Type = { fg = colors.blue },
-        Special = { fg = colors.cyan },
+        String = { fg = colors.green },
+        Identifier = { fg = colors.blue },
+        Function = { fg = colors.purple },
+        Statement = { fg = colors.purple },
+        PreProc = { fg = colors.cyan },
+        Type = { fg = colors.yellow },
+        Special = { fg = colors.orange },
         Underlined = { fg = colors.blue, underline = true },
         Todo = { fg = colors.yellow, bold = true },
         Error = { fg = colors.red },
 
         -- UI elements
         LineNr = { fg = colors.gray },
-        CursorLine = { bg = "#2D2D2D" },
-        CursorLineNr = { fg = colors.fg, bold = true },
-        VertSplit = { fg = colors.gray },
-        StatusLine = { fg = colors.fg, bg = "#252526" },
-        StatusLineNC = { fg = colors.gray, bg = "#252526" },
+        CursorLine = { bg = colors.bg_highlight },
+        CursorLineNr = { fg = colors.yellow, bold = true },
+        VertSplit = { fg = colors.bg_highlight },
+        StatusLine = { fg = colors.fg, bg = colors.bg_highlight },
+        StatusLineNC = { fg = colors.light_gray, bg = colors.bg_dark },
+        Pmenu = { fg = colors.fg, bg = colors.bg_dark },
+        PmenuSel = { fg = colors.bg, bg = colors.blue },
+        Search = { fg = colors.bg, bg = colors.yellow },
+        IncSearch = { fg = colors.bg, bg = colors.orange },
+
+        -- Syntax highlighting
+        Keyword = { fg = colors.purple },
+        Operator = { fg = colors.cyan },
+        Method = { fg = colors.blue },
+        Field = { fg = colors.cyan },
+        Variable = { fg = colors.fg },
+        VariableBuiltin = { fg = colors.red },
+        Class = { fg = colors.yellow },
+        Interface = { fg = colors.yellow },
+        Namespace = { fg = colors.yellow },
+
+        -- Git highlighting
+        GitSignsAdd = { fg = colors.green },
+        GitSignsChange = { fg = colors.blue },
+        GitSignsDelete = { fg = colors.red },
 
         -- Add more highlight groups as needed
     }
