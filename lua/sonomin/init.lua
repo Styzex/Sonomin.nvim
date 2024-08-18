@@ -1,27 +1,18 @@
 local M = {}
 
-M.version = "0.1.2"
+M.version = "0.1.0"
 
--- Define colors
 local colors = {
-    -- Background colors
     bg = "#1f1f1f",
-    bg_dark = "#181818",
-    bg_highlight = "#282828",
-    
-    -- Foreground colors
     fg = "#e2e2e3",
-    fg_dark = "#7f8490",
-    fg_gutter = "#3b3d4b",
-    
-    -- Base colors
-    red = "#fc5d7c",
-    orange = "#f39660",
-    yellow = "#e7c664",
-    green = "#9ed072",
+    gray = "#7f8490",
     blue = "#76cce0",
+    cyan = "#76cce0",
+    green = "#9ed072",
+    orange = "#f39660",
     purple = "#b39df3",
-    cyan = "#f39660",
+    red = "#fc5d7c",
+    yellow = "#e7c664",
 }
 
 function M.setup()
@@ -36,90 +27,71 @@ function M.setup()
     local groups = {
         -- Highlight groups
         Normal = { fg = colors.fg, bg = colors.bg },
-        NormalFloat = { fg = colors.fg, bg = colors.bg_dark },
-        Comment = { fg = colors.fg_dark },
-        Constant = { fg = colors.orange },
-        String = { fg = colors.green },
-        Character = { fg = colors.green },
-        Number = { fg = colors.orange },
-        Boolean = { fg = colors.orange },
-        Float = { fg = colors.orange },
+        NormalFloat = { fg = colors.fg, bg = colors.bg },
+        Comment = { fg = colors.gray },
+        Constant = { fg = colors.purple },
+        String = { fg = colors.yellow },
+        Character = { fg = colors.yellow },
+        Number = { fg = colors.purple },
+        Boolean = { fg = colors.purple },
+        Float = { fg = colors.purple },
         Identifier = { fg = colors.fg },
-        Function = { fg = colors.blue },
-        Statement = { fg = colors.purple },
-        Conditional = { fg = colors.purple },
-        Repeat = { fg = colors.purple },
-        Label = { fg = colors.purple },
-        Operator = { fg = colors.purple },
-        Keyword = { fg = colors.purple },
-        Exception = { fg = colors.purple },
-        ["@keyword.return"] = { fg = colors.red },
-        PreProc = { fg = colors.purple },
-        Include = { fg = colors.purple },
-        Define = { fg = colors.purple },
-        Macro = { fg = colors.purple },
-        PreCondit = { fg = colors.purple },
-        Type = { fg = colors.yellow },
-        StorageClass = { fg = colors.yellow },
-        Structure = { fg = colors.yellow },
-        Typedef = { fg = colors.yellow },
-        Special = { fg = colors.blue },
+        Function = { fg = colors.green },
+        Statement = { fg = colors.red },
+        Conditional = { fg = colors.red },
+        Repeat = { fg = colors.red },
+        Label = { fg = colors.red },
+        Operator = { fg = colors.red },
+        Keyword = { fg = colors.red },
+        Exception = { fg = colors.red },
+        PreProc = { fg = colors.red },
+        Include = { fg = colors.red },
+        Define = { fg = colors.red },
+        Macro = { fg = colors.red },
+        PreCondit = { fg = colors.red },
+        Type = { fg = colors.blue, italic = true },
+        StorageClass = { fg = colors.blue, italic = true },
+        Structure = { fg = colors.blue, italic = true },
+        Typedef = { fg = colors.blue, italic = true },
+        Special = { fg = colors.orange },
         SpecialChar = { fg = colors.orange },
         Tag = { fg = colors.blue },
         Delimiter = { fg = colors.fg },
-        SpecialComment = { fg = colors.fg_dark },
+        SpecialComment = { fg = colors.gray },
         Debug = { fg = colors.orange },
         Underlined = { fg = colors.blue, underline = true },
-        Ignore = { fg = colors.fg_gutter },
+        Ignore = { fg = colors.gray },
         Error = { fg = colors.red },
         Todo = { fg = colors.yellow, bold = true },
 
         -- UI elements
         Cursor = { fg = colors.bg, bg = colors.fg },
-        CursorLine = { bg = colors.bg_highlight },
-        CursorColumn = { bg = colors.bg_highlight },
-        ColorColumn = { bg = colors.bg_highlight },
-        LineNr = { fg = colors.fg_gutter },
-        CursorLineNr = { fg = colors.fg, bold = true },
-        VertSplit = { fg = colors.bg_highlight },
-        StatusLine = { fg = colors.fg, bg = colors.bg_highlight },
-        StatusLineNC = { fg = colors.fg_dark, bg = colors.bg_dark },
-        Pmenu = { fg = colors.fg, bg = colors.bg_dark },
+        CursorLine = { bg = "#282828" },
+        LineNr = { fg = "#727272" },
+        CursorLineNr = { fg = colors.yellow, bold = true },
+        VertSplit = { fg = "#2A2A2A" },
+        StatusLine = { fg = colors.fg, bg = "#1A1A1A" },
+        StatusLineNC = { fg = "#7E7E7E", bg = "#1A1A1A" },
+        Pmenu = { fg = colors.fg, bg = "#1A1A1A" },
         PmenuSel = { fg = colors.bg, bg = colors.blue },
-        PmenuSbar = { bg = colors.bg_highlight },
-        PmenuThumb = { bg = colors.fg_dark },
-        TabLine = { fg = colors.fg_dark, bg = colors.bg_dark },
-        TabLineFill = { bg = colors.bg_dark },
-        TabLineSel = { fg = colors.fg, bg = colors.bg },
         Search = { fg = colors.bg, bg = colors.yellow },
         IncSearch = { fg = colors.bg, bg = colors.orange },
-        Visual = { bg = colors.bg_highlight },
-        VisualNOS = { bg = colors.bg_highlight },
-        Folded = { fg = colors.fg_dark, bg = colors.bg_highlight },
-        FoldColumn = { fg = colors.fg_gutter, bg = colors.bg },
-        SignColumn = { fg = colors.fg_gutter, bg = colors.bg },
-        NonText = { fg = colors.fg_gutter },
-        SpecialKey = { fg = colors.fg_gutter },
-        MatchParen = { fg = colors.orange, bold = true },
-        Whitespace = { fg = colors.fg_gutter },
+        Visual = { bg = "#212121" },
 
-        -- Diff
-        DiffAdd = { fg = colors.green, bg = colors.bg },
-        DiffChange = { fg = colors.yellow, bg = colors.bg },
-        DiffDelete = { fg = colors.red, bg = colors.bg },
-        DiffText = { fg = colors.blue, bg = colors.bg },
-
-        -- Git
-        GitSignsAdd = { fg = colors.green },
-        GitSignsChange = { fg = colors.yellow },
-        GitSignsDelete = { fg = colors.red },
+        -- Syntax highlighting
+        ["@keyword.return"] = { fg = colors.red },
+        ["@variable"] = { fg = colors.fg },
+        ["@parameter"] = { fg = colors.orange, italic = true },
+        ["@field"] = { fg = colors.fg },
+        ["@property"] = { fg = colors.fg },
+        ["@constructor"] = { fg = colors.blue },
     }
 
     for group, styles in pairs(groups) do
         vim.api.nvim_set_hl(0, group, styles)
     end
 
-    -- After the for loop that sets highlight groups
+    -- Additional highlight groups
     vim.api.nvim_set_hl(0, "@keyword.return", { fg = colors.red })
     vim.api.nvim_set_hl(0, "Return", { link = "@keyword.return" })
 end
