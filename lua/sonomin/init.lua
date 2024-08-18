@@ -1,6 +1,6 @@
 local M = {}
 
-M.version = "0.1.1"
+M.version = "0.1.2"
 
 -- Define colors
 local colors = {
@@ -40,45 +40,78 @@ function M.setup()
         Comment = { fg = colors.fg_dark },
         Constant = { fg = colors.orange },
         String = { fg = colors.green },
-        Identifier = { fg = colors.blue },
-        Function = { fg = colors.purple },
+        Character = { fg = colors.green },
+        Number = { fg = colors.orange },
+        Boolean = { fg = colors.orange },
+        Float = { fg = colors.orange },
+        Identifier = { fg = colors.fg },
+        Function = { fg = colors.blue },
         Statement = { fg = colors.purple },
-        PreProc = { fg = colors.cyan },
+        Conditional = { fg = colors.purple },
+        Repeat = { fg = colors.purple },
+        Label = { fg = colors.purple },
+        Operator = { fg = colors.purple },
+        Keyword = { fg = colors.purple },
+        Exception = { fg = colors.purple },
+        PreProc = { fg = colors.purple },
+        Include = { fg = colors.purple },
+        Define = { fg = colors.purple },
+        Macro = { fg = colors.purple },
+        PreCondit = { fg = colors.purple },
         Type = { fg = colors.yellow },
-        Special = { fg = colors.orange },
+        StorageClass = { fg = colors.yellow },
+        Structure = { fg = colors.yellow },
+        Typedef = { fg = colors.yellow },
+        Special = { fg = colors.blue },
+        SpecialChar = { fg = colors.orange },
+        Tag = { fg = colors.blue },
+        Delimiter = { fg = colors.fg },
+        SpecialComment = { fg = colors.fg_dark },
+        Debug = { fg = colors.orange },
         Underlined = { fg = colors.blue, underline = true },
-        Todo = { fg = colors.yellow, bold = true },
+        Ignore = { fg = colors.fg_gutter },
         Error = { fg = colors.red },
+        Todo = { fg = colors.yellow, bold = true },
 
         -- UI elements
-        LineNr = { fg = colors.fg_gutter },
+        Cursor = { fg = colors.bg, bg = colors.fg },
         CursorLine = { bg = colors.bg_highlight },
+        CursorColumn = { bg = colors.bg_highlight },
+        ColorColumn = { bg = colors.bg_highlight },
+        LineNr = { fg = colors.fg_gutter },
         CursorLineNr = { fg = colors.fg, bold = true },
         VertSplit = { fg = colors.bg_highlight },
         StatusLine = { fg = colors.fg, bg = colors.bg_highlight },
         StatusLineNC = { fg = colors.fg_dark, bg = colors.bg_dark },
         Pmenu = { fg = colors.fg, bg = colors.bg_dark },
         PmenuSel = { fg = colors.bg, bg = colors.blue },
+        PmenuSbar = { bg = colors.bg_highlight },
+        PmenuThumb = { bg = colors.fg_dark },
+        TabLine = { fg = colors.fg_dark, bg = colors.bg_dark },
+        TabLineFill = { bg = colors.bg_dark },
+        TabLineSel = { fg = colors.fg, bg = colors.bg },
         Search = { fg = colors.bg, bg = colors.yellow },
         IncSearch = { fg = colors.bg, bg = colors.orange },
+        Visual = { bg = colors.bg_highlight },
+        VisualNOS = { bg = colors.bg_highlight },
+        Folded = { fg = colors.fg_dark, bg = colors.bg_highlight },
+        FoldColumn = { fg = colors.fg_gutter, bg = colors.bg },
+        SignColumn = { fg = colors.fg_gutter, bg = colors.bg },
+        NonText = { fg = colors.fg_gutter },
+        SpecialKey = { fg = colors.fg_gutter },
+        MatchParen = { fg = colors.orange, bold = true },
+        Whitespace = { fg = colors.fg_gutter },
 
-        -- Syntax highlighting
-        Keyword = { fg = colors.purple },
-        Operator = { fg = colors.cyan },
-        Method = { fg = colors.blue },
-        Field = { fg = colors.cyan },
-        Variable = { fg = colors.fg },
-        VariableBuiltin = { fg = colors.red },
-        Class = { fg = colors.yellow },
-        Interface = { fg = colors.yellow },
-        Namespace = { fg = colors.yellow },
+        -- Diff
+        DiffAdd = { fg = colors.green, bg = colors.bg },
+        DiffChange = { fg = colors.yellow, bg = colors.bg },
+        DiffDelete = { fg = colors.red, bg = colors.bg },
+        DiffText = { fg = colors.blue, bg = colors.bg },
 
-        -- Git highlighting
+        -- Git
         GitSignsAdd = { fg = colors.green },
-        GitSignsChange = { fg = colors.blue },
+        GitSignsChange = { fg = colors.yellow },
         GitSignsDelete = { fg = colors.red },
-
-        -- Add more highlight groups as needed
     }
 
     for group, styles in pairs(groups) do
