@@ -53,6 +53,7 @@ function M.setup()
         Operator = { fg = colors.purple },
         Keyword = { fg = colors.purple },
         Exception = { fg = colors.purple },
+        ["@keyword.return"] = { fg = colors.red },
         PreProc = { fg = colors.purple },
         Include = { fg = colors.purple },
         Define = { fg = colors.purple },
@@ -117,6 +118,10 @@ function M.setup()
     for group, styles in pairs(groups) do
         vim.api.nvim_set_hl(0, group, styles)
     end
+
+    -- After the for loop that sets highlight groups
+    vim.api.nvim_set_hl(0, "@keyword.return", { fg = colors.red })
+    vim.api.nvim_set_hl(0, "Return", { link = "@keyword.return" })
 end
 
 return M
