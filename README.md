@@ -1,3 +1,6 @@
+<a href="https://dotfyle.com/plugins/Styzex/Sonomin.nvim">
+	<img src="https://dotfyle.com/plugins/Styzex/Sonomin.nvim/shield?style=flat" />
+</a>
 # 🎨 Sonomin
 
 Sonomin is a dark colorscheme for Neovim, its a mix between [Sonokai](https://github.com/sainnhe/sonokai) and [Min](https://github.com/miguelsolorio/min-theme)
